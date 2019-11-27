@@ -1,0 +1,35 @@
+input CreateDummyContentInput {
+  description: String!
+  title: String!
+}
+
+type DummyContent {
+  description: String!
+  id: ID!
+  title: String!
+}
+
+type Mutation {
+  createDummyContent(dummyContent: CreateDummyContentInput!): DummyContent!
+
+  """
+  An example field added by the generator
+  """
+  testField: String!
+  updateDummyContent(dummyContent: UpdateDummyContentInput!, id: ID!): DummyContent!
+}
+
+type Query {
+  dummyContent(id: ID!): DummyContent!
+  dummyContents: [DummyContent!]!
+
+  """
+  An example field added by the generator
+  """
+  testField: String!
+}
+
+input UpdateDummyContentInput {
+  description: String
+  title: String
+}
